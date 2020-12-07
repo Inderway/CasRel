@@ -12,7 +12,7 @@ test_3 = []
 test_4 = []
 test_other = []
 
-with open('test.json') as f:
+with open('new_train.json') as f:
     for l in tqdm(f):
         a = json.loads(l)
         if not a['relationMentions']:

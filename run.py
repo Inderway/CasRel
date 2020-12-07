@@ -3,13 +3,13 @@ from data_loader import data_generator, load_data
 from model import E2EModel, Evaluate
 from utils import extract_items, get_tokenizer, metric
 import os, argparse
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 from keras import backend as K
 if(K.backend() == 'tensorflow'):
     import tensorflow as tf
     from keras.backend.tensorflow_backend import set_session
     config = tf.ConfigProto()
-    config.gpu_options.allow_growth = True
+    #config.gpu_options.allow_growth = True
     sess = tf.Session(config=config)
 
 parser = argparse.ArgumentParser(description='Model Controller')
@@ -27,10 +27,10 @@ if __name__ == '__main__':
 
     dataset = args.dataset
     train_path = 'data/' + dataset + '/train_triples.json'
-    dev_path = 'data/' + dataset + '/dev_triples.json'
-    # test_path = 'data/' + dataset + '/test_split_by_num/test_triples_5.json' # ['1','2','3','4','5']
-    # test_path = 'data/' + dataset + '/test_split_by_type/test_triples_seo.json' # ['normal', 'seo', 'epo']
-    # test_path = 'data/' + dataset + '/test_triples.json' # overall test
+    dev_path = 'data/' + dataset + '/valid_triples.json'
+    #test_path = 'data/' + dataset + '/test_split_by_num/test_triples_5.json' # ['1','2','3','4','5']
+    #test_path = 'data/' + dataset + '/test_split_by_type/test_triples_seo.json' # ['normal', 'seo', 'epo']
+    test_path = 'data/' + dataset + '/test_triples.json' # overall test
     rel_dict_path = 'data/' + dataset + '/rel2id.json'
     save_weights_path = 'saved_weights/' + dataset + '/best_model.weights'
     

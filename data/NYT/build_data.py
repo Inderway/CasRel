@@ -12,7 +12,7 @@ train_data = []
 dev_data = []
 test_data = []
 
-with open('train.json') as f:
+with open('new_train.json') as f:
     for l in tqdm(f):
         a = json.loads(l)
         if not a['relationMentions']:
@@ -29,7 +29,7 @@ with open('train.json') as f:
                 rel_set.add(rm['label'])
 
 
-with open('dev.json') as f:
+with open('new_valid.json') as f:
     for l in tqdm(f):
         a = json.loads(l)
         if not a['relationMentions']:
@@ -46,7 +46,7 @@ with open('dev.json') as f:
                 rel_set.add(rm['label'])
 
 cnt = 0
-with open('test.json') as f:
+with open('new_test.json') as f:
     for l in tqdm(f):
         a = json.loads(l)
         if not a['relationMentions']:
@@ -75,7 +75,7 @@ with codecs.open('train_triples.json', 'w', encoding='utf-8') as f:
     json.dump(train_data, f, indent=4, ensure_ascii=False)
 
 
-with codecs.open('dev_triples.json', 'w', encoding='utf-8') as f:
+with codecs.open('valid_triples.json', 'w', encoding='utf-8') as f:
     json.dump(dev_data, f, indent=4, ensure_ascii=False)
 
 

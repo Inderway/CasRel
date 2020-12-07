@@ -21,7 +21,7 @@ This repo was tested on Python 3.7 and Keras 2.2.4. The main requirements are:
 
 ## Datasets
 
-- [NYT](https://github.com/weizhepei/CasRel/tree/master/data/NYT)
+- [NYT](https://github.com/weizhepei/CasRel/tree/master/data/NYT) 
 - [WebNLG](https://github.com/weizhepei/CasRel/tree/master/data/WebNLG)
 - [ACE04](https://github.com/weizhepei/CasRel/tree/master/data/ACE04)
 - [NYT10-HRL](https://github.com/weizhepei/CasRel/tree/master/data/NYT10-HRL)

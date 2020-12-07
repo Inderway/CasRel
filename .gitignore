@@ -130,3 +130,4 @@ dmypy.json
 
 #update by YW
 pretrained_bert_models/
+data/
