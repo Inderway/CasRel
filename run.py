@@ -3,18 +3,19 @@ from data_loader import data_generator, load_data
 from model import E2EModel, Evaluate
 from utils import extract_items, get_tokenizer, metric
 import os, argparse
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 from keras import backend as K
 if(K.backend() == 'tensorflow'):
     import tensorflow as tf
     from keras.backend.tensorflow_backend import set_session
     config = tf.ConfigProto()
+
     #config.gpu_options.allow_growth = True
     sess = tf.Session(config=config)
 
 parser = argparse.ArgumentParser(description='Model Controller')
-parser.add_argument('--train', default=False, type=bool, help='to train the HBT model, python run.py --train=True')
-parser.add_argument('--dataset', default='WebNLG', type=str, help='specify the dataset from ["NYT","WebNLG","ACE04","NYT10-HRL","NYT11-HRL","Wiki-KBP"]')
+parser.add_argument('--train', default=True, type=bool, help='to train the HBT model, python run.py --train=True')
+parser.add_argument('--dataset', default='NYT', type=str, help='specify the dataset from ["NYT","WebNLG","ACE04","NYT10-HRL","NYT11-HRL","Wiki-KBP"]')
 args = parser.parse_args()
 
 
