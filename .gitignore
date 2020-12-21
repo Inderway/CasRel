@@ -133,3 +133,4 @@ pretrained_bert_models/
 data/
 saved_weights/
 .idea/
+.vscode/
